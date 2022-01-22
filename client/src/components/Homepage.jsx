@@ -2,7 +2,12 @@ import React from 'react';
 import millify from 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
+import {useGetCryptosQuery} from "../Services/CryptoAPI"
 const Homepage = () => {
+    const { data, isFetching } = useGetCryptosQuery();
+    console.log(data);
+    const globalStats=data?.data?.stats
+    if(isFetching) return "Loading..."
     return (
        <>
        <Typography.Title level={2} className='heading'>Global Crypto Stats</Typography.Title>
