@@ -8,6 +8,7 @@ import {
   CryptoDetails,
   News,
 } from "./components";
+import "antd/dist/antd.css"
 import "./styles/App.css";
 const App = () => {
   return (
@@ -20,14 +21,14 @@ const App = () => {
           <Layout>
             <div className="routes">
               <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/exchanges" element={<Exchanges />} />
+                <Route path="/kryptoApp/" element={<Homepage />} />
+                <Route path="/kryptoApp/exchanges" element={<Exchanges />} />
                 <Route
-                  path="/cryptocurrencies"
+                  path="/kryptoApp/cryptocurrencies"
                   element={<Cryptocurrencies />}
                 />
-                <Route path="/crypto/:coinId" element={<CryptoDetails />} />
-                <Route path="/news" element={<News />} />
+                <Route path="/kryptoApp/crypto/:coinId" element={<CryptoDetails />} />
+                <Route path="/kryptoApp/news" element={<News />} />
               </Routes>
             </div>
           </Layout>
