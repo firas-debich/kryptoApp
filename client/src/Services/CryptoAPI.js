@@ -6,7 +6,7 @@ const Headers =  {
 
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL
-console.log({baseUrl});
+
 const crateRequest = url =>({url,headers:Headers})
 
 export const  cryptoApi =createApi({
