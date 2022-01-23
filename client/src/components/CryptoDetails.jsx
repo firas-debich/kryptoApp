@@ -14,6 +14,7 @@ import {
   NumberOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
+import Loading from "./Loading";
 import { useState } from "react";
 import Chart from "./Chart";
 const { Title, Text } = Typography;
@@ -27,7 +28,7 @@ const CryptoDetails = () => {
   
   const cryptoDetails = data?.data?.coin;
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
-  console.log({ cryptoDetails });
+
   const stats = [
     {
       title: "Price to USD",
@@ -56,7 +57,7 @@ const CryptoDetails = () => {
       icon: <TrophyOutlined />,
     },
   ];
-    if(isFetching) return "Loading..."
+    if(isFetching) return <Loading/>
   const genericStats = [
     {
       title: "Number Of Markets",

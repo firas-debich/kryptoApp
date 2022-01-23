@@ -1,7 +1,10 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { Chart as chartjs, registerables } from 'chart.js';
 import { Col, Row, Typography } from 'antd';
 const { Title } = Typography;
+
+chartjs.register(...registerables);
 const Chart = ({ coinHistory, currentPrice, coinName }) => {
     const coinPrice = [];
     const coinTimestamp = [];
