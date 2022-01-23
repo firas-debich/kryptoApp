@@ -7,19 +7,19 @@ const Headers =  {
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL
 console.log({baseUrl});
-const crateRequest = url =>({url,headers:Headers})
+const createRequest = url =>({url,headers:Headers})
 
 export const  cryptoApi =createApi({
         reducerPath: 'cryptoApi',
         baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
         endpoints:(builder)=>({
             getCryptos:builder.query({
-                query:(count)=>crateRequest( `/coins?limit=${count}`)
+                query:(count)=>createRequest( `/coins?limit=${count}`)
             }),
-            getCryptoDetails:builder.query({
-                 query:(coindId) =>crateRequest(`/coin/${coindId}`)  
-            })
-
+            
+            getCryptoDetails: builder.query({
+                query: (coinId) => createRequest(`/coin/${coinId}`),
+              }),
         }),
 
 })
