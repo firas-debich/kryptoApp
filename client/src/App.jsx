@@ -42,12 +42,12 @@ const App = () => {
                 textAlign: "center",
               }}
             >
-              Crypto <br />
+              Cryptocurrency <br />
               All rights reserved
             </Typography.Title>
-            <Space>
+               <Space>
               <Link to="/kryptoApp/">Home</Link>
-              <Link to="/kryptoApp/exchanges">Exchanges</Link>
+              <Link to="/kryptoApp/cryptocurrencies">Cryptocurrencies</Link>
               <Link to="/kryptoApp/news">News</Link>
             </Space>
           </div>

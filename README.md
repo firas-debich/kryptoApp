@@ -1,5 +1,5 @@
 # kryptoApp
-
+![alt text](client/src/images/project_image.png)
 
 # Ant design 
 https://ant.design/
