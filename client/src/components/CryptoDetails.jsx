@@ -19,13 +19,19 @@ import { useState } from "react";
 import Chart from "./Chart";
 const { Title, Text } = Typography;
 const { Option } = Select;
-import { useGetCryptoDetailsQuery ,useGetCryptoHistoryQuery } from "../Services/CryptoAPI";
+import {
+  useGetCryptoDetailsQuery,
+  useGetCryptoHistoryQuery,
+} from "../Services/CryptoAPI";
 const CryptoDetails = () => {
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
-  const { data:coinHitstory } = useGetCryptoHistoryQuery({coinId,timePeriod});
-  
+  const { data: coinHitstory } = useGetCryptoHistoryQuery({
+    coinId,
+    timePeriod,
+  });
+
   const cryptoDetails = data?.data?.coin;
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -57,7 +63,7 @@ const CryptoDetails = () => {
       icon: <TrophyOutlined />,
     },
   ];
-    if(isFetching) return <Loading/>
+  if (isFetching) return <Loading />;
   const genericStats = [
     {
       title: "Number Of Markets",
@@ -117,7 +123,11 @@ const CryptoDetails = () => {
             <Option key={date}>{date}</Option>
           ))}
         </Select>
-        <Chart coinHistory={coinHitstory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
+        <Chart
+          coinHistory={coinHitstory}
+          currentPrice={millify(cryptoDetails?.price)}
+          coinName={cryptoDetails?.name}
+        />
         <Col className="stats-container">
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-heading">
