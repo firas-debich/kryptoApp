@@ -9,6 +9,7 @@ const Headers = {
 
 
  const baseURL = import.meta.env.VITE_APP_BASE_URL_NEWS
+ console.log({baseURL});
  const crateRequest = url =>({url,headers:Headers})
 
 export const  cryptoNewsApi =createApi({
@@ -20,3 +21,7 @@ export const  cryptoNewsApi =createApi({
         })
     })
 })
+
+export const {
+    useGetCryptoNewsQuery,
+}=cryptoNewsApi

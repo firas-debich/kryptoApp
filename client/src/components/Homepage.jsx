@@ -39,7 +39,7 @@ const Homepage = () => {
                             <Link to="/kryptoApp/news">Show More</Link>
                  </Typography.Title>      
        </div>
-       <News/>
+       <News simplified/>
        
        
        </>
