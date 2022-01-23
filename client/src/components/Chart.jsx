@@ -13,7 +13,7 @@ const Chart = ({ coinHistory, currentPrice, coinName }) => {
       coinPrice.push(coinHistory?.data?.history[i]?.price);
       coinTimestamp.push(new Date(coinHistory?.data?.history[i]?.timestamp).toLocaleDateString());
     }
-  
+  //
     const data = {
         labels: coinTimestamp,
         datasets: [
